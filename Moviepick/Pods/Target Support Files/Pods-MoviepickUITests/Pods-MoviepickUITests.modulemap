@@ -1,0 +1,6 @@
+framework module Pods_MoviepickUITests {
+  umbrella header "Pods-MoviepickUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,15 @@
+excluded:
+  - Pods
+  - Podfile
+  - Podfile.lock
+  - R.generated.swift
+  - Moviepick.xcodeproj/project.pbxproj
+  - MoviepickTests/MoviepickTests.swift
+  - MoviepickUITests/MoviepickUITests.swift
+
+disabled_rules:
+  - trailing_whitespace
+
+line_length:
+  - 1000 # warning
+  - 2000 # error

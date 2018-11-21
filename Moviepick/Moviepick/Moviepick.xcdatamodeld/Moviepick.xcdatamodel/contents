@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Configuration" representedClassName="Configuration" syncable="YES" codeGenerationType="class">
+        <attribute name="backdropSize" optional="YES" attributeType="String" customClassName="[String]" syncable="YES"/>
+        <attribute name="baseImagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genereDictionary" optional="YES" attributeType="Transformable" customClassName="[Int: String]" syncable="YES"/>
+        <attribute name="posterSize" optional="YES" attributeType="String" customClassName="[String]" syncable="YES"/>
+        <attribute name="profileSize" optional="YES" attributeType="String" customClassName="[String]" syncable="YES"/>
+    </entity>
+    <entity name="MovieCoreDataObj" representedClassName="MovieCoreDataObj" syncable="YES" codeGenerationType="class">
+        <attribute name="adult" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="backdrop_path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genreIdsArray" optional="YES" attributeType="Transformable" customClassName="[Int]" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="original_language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="original_title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="overview" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="popularity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="poster_path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="release_date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="video" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="vote_average" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="vote_count" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Configuration" positionX="-54" positionY="99" width="128" height="120"/>
+        <element name="MovieCoreDataObj" positionX="-63" positionY="-18" width="128" height="255"/>
+    </elements>
+</model>
