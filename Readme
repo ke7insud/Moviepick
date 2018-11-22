@@ -49,7 +49,7 @@ Pages Created:
 	To complete the image Url "/configuration" api is used.
 
 	Movie data can only be shown to users when all the API are called:
-	In iOS, we can do that by using DispatchGroup(). Whenever API is called, dispatch group increase its count , when the result comes, it gets reduced. When 	each and every API is called, we get notified, where we can reload UICollectionView and reload data 
+	In iOS, we can do that by using DispatchGroup(). Whenever API is called, dispatch group increase its count , when the result comes, it gets reduced. When each and every API is called, we get notified, where we can reload UICollectionView and data.
 
 	To make scroll infinite, I have used a condition that (indexPath.row == self.popularMovies.count - 1).
 
@@ -59,10 +59,9 @@ Pages Created:
 	The configuration entity contains data which changes less and used to process data in MovieCoreDataObj.
 
 	Process when app initiates:
-	When the app is loaded, we fetch the data from core data objects, create in-memory data. If Internet is available and we are able to make API request, we 	discard/update that data and load new data in both the memory array and core data. At this time, I makes sure core data always contains the latest data b y 	deleting the previous/Old data.
+	When the app is loaded, we fetch the data from core data objects, create in-memory data. If Internet is available and we are able to make API request, we discard/update that data and load new data in both the memory array and core data. At this time, I makes sure core data always contains the latest data by deleting the previous/Old data.
 
 	In this way, the first page is created.
-
 
 2. Movies Details:
 	Pass the movie data from trending page to details page.
@@ -79,5 +78,5 @@ Pages Created:
 	I have placed a footer which shows a movie film.
 
 
-Let me know if you need more details from my side.
+3. Let me know if you need more details from my side.
 
