@@ -1,1 +1,83 @@
-This is the documentation
+I have created an app named as "MoviePick", where people can see the top trending movies.
+
+What we can see in the app:-
+
+People can see the name, poster, release date, genre, synopsis (a little bit), rating on the front page of the app. 
+People can tap on the card and see more details. More details include the full synopsis, poster image, backdrop image, Rating as stars & numbers, release date, Movie cast with image, character and real name, Movie crew with image, real name, job. 
+
+
+open source libraries Used:-
+1. Alamofire - HTTP networking library
+2. IBAnalyzer - Find common xib and storyboard-related problems without running your app or writing unit tests
+3. Kingfisher - A lightweight, pure-Swift library for downloading and caching images from the web.
+4. R.swift - Get strong typed, autocompleted resources like images, fonts and segues in Swift projects
+5. SwiftLint - A tool to enforce Swift style and conventions
+6. SwiftyJSON - SwiftyJSON is an open source library that helps you use JSON in Swift without tearing your hair out.
+7. VegaScrollFlowLayout - animation flow layout for UICollectionView
+
+Design Pattern Used:
+MVC (Model View Controller)
+
+Stack:
+Language - swift 4.2
+Deployment Target - 12.1
+Devices : Universal
+IDE : Xcode
+
+API Key used:
+f24fb092292486c66a0b2a5dc8b2d81b
+
+Pages Created:
+
+1. Trending movies:
+	Used MVC pattern to create the first page.
+	Created separate files to call API, fetch and store data in Core data, ViewController
+
+	API used:
+
+	To get the List of movies:
+	https://api.themoviedb.org/3/movie/popular?api_key=f24fb092292486c66a0b2a5dc8b2d81b&language=en-US&page=1
+
+	To get names of genre ids, separate API needs to be called:
+	https://api.themoviedb.org/3/genre/movie/list?api_key=f24fb092292486c66a0b2a5dc8b2d81b&language=en-US
+
+	To get base Url, image size, separate API needs to be called:
+	https://api.themoviedb.org/3/configuration?api_key=f24fb092292486c66a0b2a5dc8b2d81b
+
+	Movie data comes from "/movie/popular" where genres came as ids. 
+	To map genre id's to names "genre/movie/list" is called. 
+	To complete the image Url "/configuration" api is used.
+
+	Movie data can only be shown to users when all the API are called:
+	In iOS, we can do that by using DispatchGroup(). Whenever API is called, dispatch group increase its count , when the result comes, it gets reduced. When 	each and every API is called, we get notified, where we can reload UICollectionView and reload data 
+
+	To make scroll infinite, I have used a condition that (indexPath.row == self.popularMovies.count - 1).
+
+	CORE DATA usage for persisting data:
+	Created two objects MovieCoreDataObj, Configuration.  
+	MovieCoreDataObj entity contains data related to the movie which changes very frequently.
+	The configuration entity contains data which changes less and used to process data in MovieCoreDataObj.
+
+	Process when app initiates:
+	When the app is loaded, we fetch the data from core data objects, create in-memory data. If Internet is available and we are able to make API request, we 	discard/update that data and load new data in both the memory array and core data. At this time, I makes sure core data always contains the latest data b y 	deleting the previous/Old data.
+
+	In this way, the first page is created.
+
+
+2. Movies Details:
+	Pass the movie data from trending page to details page.
+	New data needed is of the cast and crew, for which we are calling an another API.
+
+	To get the credits (cast N Crew) related to a particular movie, pass movieId and API key.
+	https://api.themoviedb.org/3/credit/234566?api_key=f24fb092292486c66a0b2a5dc8b2d81b
+
+
+	This API gives Cast N Crew for a particular movie, with the image, job, character, real name etc. of the person.
+	I have created a collection view to show the cast image, real name, character name.
+	I have created a collection view to show the crew image, real name, Job description.
+
+	I have placed a footer which shows a movie film.
+
+
+Let me know if you need more details from my side.
+
